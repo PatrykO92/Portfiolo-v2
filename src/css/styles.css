@@ -1,11 +1,12 @@
 :root {
   --main-color1: teal;
-  --main-color2: darkred;
+  --main-color2: rgb(175, 19, 19);
   --main-color3: red;
   --main-color4: #404258;
   --main-font-color: white;
   --border-color-1: rgba(0, 0, 0, 100%);
-  --background-color1: rgba(0, 0, 0, 90%);
+  --background-color1: rgba(0, 0, 0, 100%);
+  --background-color2: rgba(0, 0, 0, 90%);
   --shadow-color: rgba(0, 0, 0, 90%);
 }
 
@@ -43,38 +44,25 @@ nav div {
 }
 
 .navleft-logo {
-  flex: 6;
+  flex: 8;
   margin-left: 3vw;
 }
 
 .navleft {
   align-items: center;
   justify-content: space-evenly;
-  flex: 9;
-  background-color: var(--background-color1);
-}
-
-.navleft-add-left {
-  background-color: var(--background-color1);
-  aspect-ratio: 1/1;
-  border-radius: 50% 0 0 50%;
-}
-
-.navleft-add-right {
-  background-color: var(--background-color1);
-  aspect-ratio: 1/1;
-  border-radius: 0 50% 50% 0;
+  flex: 8;
 }
 
 .navright-add {
+  flex: 1;
   background-color: var(--main-color2);
-  aspect-ratio: 1/1;
   border-radius: 50% 0 0 50%;
 }
 
 .navright {
   background-color: var(--main-color2);
-  flex: 2;
+  flex: 3;
   display: flex;
   justify-content: space-evenly;
 }
@@ -85,7 +73,7 @@ nav div {
 }
 
 .nav-icon {
-  padding: 20%;
+  padding: 15%;
   height: 100%;
   filter: invert(96%) sepia(97%) saturate(12%) hue-rotate(237deg)
     brightness(103%) contrast(103%);
@@ -95,26 +83,26 @@ nav div {
   z-index: -10;
   height: 100vh;
   width: 100vw;
-  opacity: 15%;
+  opacity: 100%;
   background: repeating-linear-gradient(
       -45deg,
       transparent,
       transparent 30px,
-      var(--main-color4) 30px,
-      var(--main-color4) 35px
+      var(--main-color1) 30px,
+      var(--main-color1) 35px
     ),
     repeating-linear-gradient(
       45deg,
       transparent,
       transparent 30px,
-      var(--main-color4) 30px,
-      var(--main-color4) 35px
+      var(--main-color1) 30px,
+      var(--main-color1) 35px
     ),
     repeating-linear-gradient(
       120deg,
-      var(--main-color2),
-      var(--main-color4) 75%,
-      var(--main-color4)
+      var(--main-color1),
+      var(--background-color1) 45%,
+      var(--background-color1)
     );
 }
 
@@ -143,7 +131,7 @@ nav div {
   gap: 2vmin;
   height: 100vh;
   width: 50vw;
-  background: var(--background-color1);
+  background: var(--background-color2);
 }
 
 .about-left h1,
@@ -189,7 +177,7 @@ h2 {
   background: radial-gradient(
     closest-side,
     var(--main-color1) 20%,
-    var(--background-color1) 90%
+    var(--background-color2) 90%
   );
 }
 
@@ -197,7 +185,7 @@ h2 {
   position: absolute;
   right: 0vw;
   bottom: 0;
-  height: 85vh;
+  max-height: 85vh;
 }
 
 .background-photo {
