@@ -101,7 +101,7 @@ nav div {
     repeating-linear-gradient(
       120deg,
       var(--main-color1),
-      var(--background-color1) 45%,
+      var(--background-color1) 95%,
       var(--background-color1)
     );
 }
@@ -113,16 +113,17 @@ nav div {
   top: 0;
 }
 
-.about {
-  position: relative;
+#about {
+  display: flex;
+  flex-direction: row;
   height: 100vh;
   width: 100vw;
 }
 
+#about {
+  display: none;
+}
 .about-left {
-  position: absolute;
-  left: 0;
-  top: 0;
   padding-left: 7vw;
   display: flex;
   flex-direction: column;
@@ -154,7 +155,6 @@ h2 {
   text-align: justify;
   font-size: 2.5vmin;
   max-width: 30vw;
-
   margin-bottom: 5vh;
 }
 
@@ -168,10 +168,6 @@ h2 {
 }
 
 .about-right {
-  /* z-index: -1; */
-  position: absolute;
-  left: 50vw;
-  top: 0;
   height: 100vh;
   width: 50vw;
   background: radial-gradient(
@@ -194,6 +190,54 @@ h2 {
   right: 0vw;
   bottom: 0vh;
   height: 86vh;
+}
+
+#portfolio {
+  height: 100vh;
+  width: 100vw;
+  padding-top: 12vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  background: var(--background-color2);
+}
+
+.portfolio-div {
+  border: 1px solid var(--main-color1);
+  border-radius: 20px;
+  background-color: var(--background-color1);
+  width: 35vw;
+  max-width: 900px;
+  padding: 1em;
+  text-align: center;
+  box-shadow: 0 0 3vmin var(--main-color2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vmin;
+}
+
+.portfolio-div h3 {
+  width: 100%;
+}
+
+.portfolio-div > div {
+  width: 100%;
+}
+
+.portfolio-div img {
+  max-height: 21vh;
+  max-width: 100%;
+}
+
+.portfolio-div button {
+  font-size: 2vmin;
+  padding: 0.3vmin 2vmin 0.3vmin 2vmin;
+  background-color: var(--main-color2);
+  border-radius: 5px;
 }
 
 footer {
