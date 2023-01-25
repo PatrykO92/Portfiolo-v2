@@ -29,6 +29,10 @@
   font-family: oswald;
 }
 
+.hidden {
+  transform: translateY(-100vh);
+}
+
 nav {
   z-index: 5;
   width: 100%;
@@ -70,6 +74,24 @@ nav div {
 .navleft a,
 .navright a {
   text-decoration: none;
+}
+
+.navleft a {
+  transition: color 0.5s, opacity 4s;
+}
+
+.navleft a:hover {
+  color: var(--main-color2);
+}
+
+.navright a {
+  margin: 0.5vmin;
+  border-radius: 25%;
+  transition: background-color 0.5s, opacity 4s;
+}
+
+.navright a:hover {
+  background-color: var(--main-color1);
 }
 
 .nav-icon {
@@ -114,15 +136,15 @@ nav div {
 }
 
 #about {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: row;
   height: 100vh;
   width: 100vw;
 }
 
-#about {
-  display: none;
-}
 .about-left {
   padding-left: 7vw;
   display: flex;
@@ -165,6 +187,13 @@ h2 {
   color: var(--main-font-color);
   border-radius: 25px;
   font-size: 3vmin;
+  transition: background-color 0.5s, box-shadow 1s;
+}
+
+.about-left button:hover {
+  background-color: var(--main-color3);
+  border: 1px solid var(--main-color2);
+  box-shadow: 0 0 15px 4px var(--main-color1);
 }
 
 .about-right {
@@ -193,14 +222,19 @@ h2 {
 }
 
 #portfolio {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
-  padding-top: 12vh;
+  padding-top: 20vh;
+  padding-bottom: 12vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
   background: var(--background-color2);
 }
 
@@ -209,7 +243,7 @@ h2 {
   border-radius: 20px;
   background-color: var(--background-color1);
   width: 35vw;
-  max-width: 900px;
+  max-width: 450px;
   padding: 1em;
   text-align: center;
   box-shadow: 0 0 3vmin var(--main-color2);
@@ -217,7 +251,7 @@ h2 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.5vmin;
+  gap: 5px;
 }
 
 .portfolio-div h3 {
