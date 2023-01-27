@@ -1,8 +1,8 @@
 :root {
-  --main-color1: teal;
+  --main-color1: rgb(5, 164, 164);
   --main-color2: rgb(175, 19, 19);
   --main-color3: red;
-  --main-color4: #404258;
+  --main-color4: rgb(59, 52, 52);
   --main-font-color: white;
   --border-color-1: rgba(0, 0, 0, 100%);
   --background-color1: rgba(0, 0, 0, 100%);
@@ -24,13 +24,27 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* border: 1px solid white; */
   color: var(--main-font-color);
   font-family: oswald;
 }
 
 .hidden {
-  transform: translateY(-100vh);
+  transform: translateY(150vh) scale(0.1);
+}
+
+button {
+  background-color: var(--main-color2);
+  border: 1px solid var(--main-color3);
+  color: var(--main-font-color);
+  border-radius: 25px;
+  font-size: 3vmin;
+  transition: background-color 0.5s, box-shadow 1s;
+}
+
+button:hover {
+  background-color: var(--main-color3);
+  border: 1px solid var(--main-color2);
+  box-shadow: 0 0 10px 1px var(--main-color1);
 }
 
 nav {
@@ -80,8 +94,12 @@ nav div {
   transition: color 0.5s, opacity 4s;
 }
 
-.navleft a:hover {
+.active {
   color: var(--main-color2);
+}
+
+.navleft a:hover {
+  box-shadow: 0px 2px 0px var(--main-color1);
 }
 
 .navright a {
@@ -95,13 +113,15 @@ nav div {
 }
 
 .nav-icon {
-  padding: 15%;
+  padding: 5%;
   height: 100%;
   filter: invert(96%) sepia(97%) saturate(12%) hue-rotate(237deg)
     brightness(103%) contrast(103%);
 }
 
-.background {
+.background1,
+.background2 {
+  position: fixed;
   z-index: -10;
   height: 100vh;
   width: 100vw;
@@ -128,6 +148,11 @@ nav div {
     );
 }
 
+.background2 {
+  background: none;
+  background-color: var(--background-color2);
+}
+
 .slider {
   height: 100vh;
   width: 100vw;
@@ -143,6 +168,7 @@ nav div {
   flex-direction: row;
   height: 100vh;
   width: 100vw;
+  transition: transform 2s;
 }
 
 .about-left {
@@ -154,7 +180,6 @@ nav div {
   gap: 2vmin;
   height: 100vh;
   width: 50vw;
-  background: var(--background-color2);
 }
 
 .about-left h1,
@@ -181,19 +206,7 @@ h2 {
 }
 
 .about-left button {
-  background-color: var(--main-color2);
-  border: 1px solid var(--main-color3);
   width: 15vw;
-  color: var(--main-font-color);
-  border-radius: 25px;
-  font-size: 3vmin;
-  transition: background-color 0.5s, box-shadow 1s;
-}
-
-.about-left button:hover {
-  background-color: var(--main-color3);
-  border: 1px solid var(--main-color2);
-  box-shadow: 0 0 15px 4px var(--main-color1);
 }
 
 .about-right {
@@ -202,7 +215,7 @@ h2 {
   background: radial-gradient(
     closest-side,
     var(--main-color1) 20%,
-    var(--background-color2) 90%
+    transparent 90%
   );
 }
 
@@ -225,53 +238,107 @@ h2 {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
   width: 100vw;
-  padding-top: 20vh;
-  padding-bottom: 12vh;
+  height: 100vh;
+  transition: transform 2s;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-content: center;
   justify-content: center;
-  gap: 15px;
-  background: var(--background-color2);
+  gap: 9vmin;
+}
+
+.portfolio-div-full {
+  text-align: center;
+  min-width: 75vw;
+  font-size: 2vmin;
+}
+
+.portfolio-div-full button {
+  padding: 0 15px 0 15px;
+  margin-top: 1vmin;
+  border-radius: 5px;
 }
 
 .portfolio-div {
-  border: 1px solid var(--main-color1);
+  min-width: 30vw;
+  border: 1px solid var(--main-color2);
   border-radius: 20px;
   background-color: var(--background-color1);
-  width: 35vw;
-  max-width: 450px;
   padding: 1em;
+  box-shadow: 0 0 3vmin var(--main-color1);
   text-align: center;
-  box-shadow: 0 0 3vmin var(--main-color2);
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
+  flex-direction: column;
+  gap: 1vmin;
 }
 
 .portfolio-div h3 {
   width: 100%;
 }
 
-.portfolio-div > div {
-  width: 100%;
-}
-
 .portfolio-div img {
-  max-height: 21vh;
-  max-width: 100%;
+  max-height: 30vh;
+  border-radius: 15px;
 }
 
 .portfolio-div button {
   font-size: 2vmin;
   padding: 0.3vmin 2vmin 0.3vmin 2vmin;
-  background-color: var(--main-color2);
   border-radius: 5px;
+}
+
+#contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: transform 2s;
+  display: flex;
+  align-items: center;
+}
+
+#contact h1 {
+  text-align: center;
+  font-family: neon;
+  font-size: 6vmin;
+  margin-bottom: 5vmin;
+}
+
+#contact form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vmin;
+  align-items: center;
+  padding: 25px;
+  border: 1px solid var(--main-color2);
+  border-radius: 25px;
+  background-color: var(--background-color1);
+  box-shadow: 0 0 3vmin var(--main-color1);
+}
+
+#contact input,
+#contact textarea {
+  text-align: center;
+  font-size: 2vmin;
+  width: 98%;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: var(--main-color4);
+}
+
+#contact textarea {
+  min-height: 15vh;
+  resize: none;
+}
+
+#contact button {
+  margin-top: 2vmin;
+  width: 50%;
 }
 
 footer {
