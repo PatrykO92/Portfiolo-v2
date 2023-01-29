@@ -24,6 +24,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: 0;
   color: var(--main-font-color);
   font-family: oswald;
 }
@@ -36,7 +37,7 @@ button {
   background-color: var(--main-color2);
   border: 1px solid var(--main-color3);
   color: var(--main-font-color);
-  border-radius: 25px;
+  border-radius: 5%;
   font-size: 3vmin;
   transition: background-color 0.5s, box-shadow 1s;
 }
@@ -262,7 +263,6 @@ h2 {
 .portfolio-div-full button {
   padding: 0 15px 0 15px;
   margin-top: 1vmin;
-  border-radius: 5px;
 }
 
 .portfolio-div {
@@ -293,7 +293,6 @@ h2 {
 .portfolio-div button {
   font-size: 2vmin;
   padding: 0.3vmin 2vmin 0.3vmin 2vmin;
-  border-radius: 5px;
 }
 
 #contact {
@@ -372,6 +371,12 @@ footer p {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .background-photo {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .navleft-logo {
     display: none;
@@ -407,6 +412,11 @@ footer p {
     font-size: 4vmin;
   }
 
+  .about-left button {
+    width: 35vw;
+    font-size: 4vmin;
+  }
+
   .about-right {
     background: none;
   }
@@ -437,10 +447,6 @@ footer p {
   .portfolio-div {
     max-height: 30vh;
     width: 85vw;
-  }
-
-  .background-photo {
-    display: none;
   }
 
   .my-photo {
