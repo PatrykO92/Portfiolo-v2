@@ -1,34 +1,59 @@
-import { gitHubLogo, linkedInLogo, resumeLogo } from "../icons";
+import { useState, useEffect } from "react";
+import { gitHubLogo, linkedInLogo, resumeLogo, codewarsLogo } from "../icons";
 import logo from "../images/logo.png";
 
 const Navbar = () => {
+  const [activePage, setActivePage] = useState("about");
+
+  useEffect(() => {}, []);
+
   return (
     <nav>
-      <div className="navleft-logo">
-        <img src={logo} alt="PatrykOrlowski" />
-      </div>
-
+      <img src={logo} alt="" className="navleft-logo" />
       <div className="navleft">
-        <a href="#about" className="active">
+        <a
+          href="#about"
+          className={activePage === "about" ? "active" : ""}
+          onClick={() => setActivePage("about")}
+        >
           About
         </a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
+        <a
+          href="#portfolio"
+          className={activePage === "portfolio" ? "active" : ""}
+          onClick={() => setActivePage("portfolio")}
+        >
+          Portfolio
+        </a>
+        <a
+          href="#contact"
+          className={activePage === "contact" ? "active" : ""}
+          onClick={() => setActivePage("contact")}
+        >
+          Contact
+        </a>
       </div>
-
-      <div className="navright-add"></div>
 
       <div className="navright">
         <a
           href="https://www.linkedin.com/in/patryk-or%C5%82owski-348515258/"
           target="_blank"
+          rel="noreferrer"
         >
           <img className="nav-icon" src={linkedInLogo} alt="LinkedIn" />
         </a>
-        <a href="https://github.com/PatrykO92" target="_blank">
+        <a href="https://github.com/PatrykO92" target="_blank" rel="noreferrer">
           <img className="nav-icon" src={gitHubLogo} alt="GitHub" />
         </a>
-        <a href="src/files/cv.pdf" target="_blank">
+        {/*TODO: change logo to whiter/prettier */}
+        <a
+          href="https://www.codewars.com/users/PatrykO92"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img className="nav-icon" src={codewarsLogo} alt="CodeWars" />
+        </a>
+        <a href="src/files/cv.pdf" target="_blank" rel="noreferrer">
           <img className="nav-icon" src={resumeLogo} alt="Resume" />
         </a>
       </div>
