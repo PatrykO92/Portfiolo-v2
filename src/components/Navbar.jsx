@@ -1,37 +1,37 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { gitHubLogo, linkedInLogo, resumeLogo, codewarsLogo } from "../icons";
 import logo from "../images/logo.png";
 
-const Navbar = () => {
-  const [activePage, setActivePage] = useState("about");
+import { NavLink } from "react-router-dom";
 
-  useEffect(() => {}, []);
+const Navbar = () => {
+  const [activePage, setActivePage] = useState("");
 
   return (
     <nav>
       <img src={logo} alt="" className="navleft-logo" />
       <div className="navleft">
-        <a
-          href="#about"
+        <NavLink
+          to="/"
           className={activePage === "about" ? "active" : ""}
           onClick={() => setActivePage("about")}
         >
-          About
-        </a>
-        <a
-          href="#portfolio"
+          Home
+        </NavLink>
+        <NavLink
+          to="/portfolio"
           className={activePage === "portfolio" ? "active" : ""}
           onClick={() => setActivePage("portfolio")}
         >
           Portfolio
-        </a>
-        <a
-          href="#contact"
+        </NavLink>
+        <NavLink
+          to="/contact"
           className={activePage === "contact" ? "active" : ""}
           onClick={() => setActivePage("contact")}
         >
           Contact
-        </a>
+        </NavLink>
       </div>
 
       <div className="navright">
@@ -45,7 +45,6 @@ const Navbar = () => {
         <a href="https://github.com/PatrykO92" target="_blank" rel="noreferrer">
           <img className="nav-icon" src={gitHubLogo} alt="GitHub" />
         </a>
-        {/*TODO: change logo to whiter/prettier */}
         <a
           href="https://www.codewars.com/users/PatrykO92"
           target="_blank"

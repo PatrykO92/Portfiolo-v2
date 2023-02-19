@@ -7,30 +7,31 @@ const AboutPage = () => {
   };
 
   return (
-    <div id="about" className="">
+    <main id="about" key="about" className="">
       <div className="about">
-        <h1>Patryk Orlowski</h1>
-        <h2>Frontend Web Developer</h2>
+        <div className="description-container">
+          <h1>Patryk Orlowski</h1>
+          <h2>Frontend Web Developer</h2>
 
-        <p>
-          My name is Patryk. I am a frontend web developer with a strong
-          foundation in JavaScript and React. I am eager to continue learning
-          and growing my skills in order to become an expert in web development.
-          I am always looking for new challenges and opportunities to improve my
-          skills and make a meaningful contribution to web development projects.
-        </p>
-        <button onClick={() => buttonHandler("https://github.com")}>
-          Skills
-        </button>
+          <p>
+            My name is Patryk. I am a frontend web developer with a strong
+            foundation in JavaScript and React. I am eager to continue learning
+            and growing my skills in order to become an expert in web
+            development. I am always looking for new challenges and
+            opportunities to improve my skills and make a meaningful
+            contribution to web development projects.
+          </p>
+          <button onClick={() => buttonHandler("https://github.com")}>
+            Skills
+          </button>
+        </div>
 
-        <img
-          src={backgroundPhoto}
-          alt="monitor photo"
-          className="background-photo"
-        />
-        <img src={myPhoto} alt="PatrykOrlowskiPhoto" className="my-photo" />
+        <div className="photo-container">
+          <img src={backgroundPhoto} alt="" className="background-photo" />
+          <img src={myPhoto} alt="PatrykOrlowskiPhoto" className="my-photo" />
+        </div>
       </div>
-    </div>
+    </main>
   );
 };
 
