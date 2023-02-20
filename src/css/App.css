@@ -229,23 +229,12 @@ a {
   width: 50%;
 }
 
-.background-photo {
-  opacity: 0.5;
-  z-index: -2;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  max-height: 90%;
-  max-width: 110%;
-}
-
 .my-photo {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: -1;
-  max-height: 90%;
-  max-width: 90%;
+  max-width: 105%;
 }
 
 #portfolio {

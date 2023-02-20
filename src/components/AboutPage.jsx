@@ -1,5 +1,4 @@
 import myPhoto from "../images/myPhoto.png";
-import backgroundPhoto from "../images/code.png";
 
 const AboutPage = () => {
   const buttonHandler = (url) => {
@@ -27,7 +26,6 @@ const AboutPage = () => {
         </div>
 
         <div className="photo-container">
-          <img src={backgroundPhoto} alt="" className="background-photo" />
           <img src={myPhoto} alt="PatrykOrlowskiPhoto" className="my-photo" />
         </div>
       </div>
