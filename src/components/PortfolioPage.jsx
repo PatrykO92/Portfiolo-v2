@@ -42,7 +42,7 @@ const PortfolioPage = () => {
         </p>
         <button
           onClick={() => buttonHandler("https://github.com")}
-          style={{ height: "5rem", padding: 0, border: 0 }}
+          style={{ height: "5rem", padding: 0, border: 0, margin: "1.5rem" }}
         >
           <img
             src={gitHubLogo}

@@ -15,6 +15,7 @@ const Navbar = () => {
           to="/"
           className={activePage === "about" ? "active" : ""}
           onClick={() => setActivePage("about")}
+          title="Home"
         >
           Home
         </NavLink>
@@ -22,6 +23,7 @@ const Navbar = () => {
           to="/portfolio"
           className={activePage === "portfolio" ? "active" : ""}
           onClick={() => setActivePage("portfolio")}
+          title="Portfolio"
         >
           Portfolio
         </NavLink>
@@ -29,6 +31,7 @@ const Navbar = () => {
           to="/contact"
           className={activePage === "contact" ? "active" : ""}
           onClick={() => setActivePage("contact")}
+          title="Contact"
         >
           Contact
         </NavLink>
@@ -39,20 +42,32 @@ const Navbar = () => {
           href="https://www.linkedin.com/in/patryk-or%C5%82owski-348515258/"
           target="_blank"
           rel="noreferrer"
+          title="LinkedIn"
         >
           <img className="nav-icon" src={linkedInLogo} alt="LinkedIn" />
         </a>
-        <a href="https://github.com/PatrykO92" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/PatrykO92"
+          target="_blank"
+          rel="noreferrer"
+          title="GitHub"
+        >
           <img className="nav-icon" src={gitHubLogo} alt="GitHub" />
         </a>
         <a
           href="https://www.codewars.com/users/PatrykO92"
           target="_blank"
           rel="noreferrer"
+          title="Codewars"
         >
           <img className="nav-icon" src={codewarsLogo} alt="CodeWars" />
         </a>
-        <a href="src/files/cv.pdf" target="_blank" rel="noreferrer">
+        <a
+          href="src/files/cv.pdf"
+          target="_blank"
+          rel="noreferrer"
+          title="Resume/CV"
+        >
           <img className="nav-icon" src={resumeLogo} alt="Resume" />
         </a>
       </div>
