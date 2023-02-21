@@ -42,7 +42,7 @@ const PortfolioPage = () => {
         </p>
         <button
           onClick={() => buttonHandler("https://github.com")}
-          style={{ height: "5rem", padding: 0, border: 0, margin: "1.5rem" }}
+          style={{ height: "5rem" }}
         >
           <img
             src={gitHubLogo}
@@ -59,7 +59,6 @@ const PortfolioPage = () => {
           onClick={() =>
             buttonHandler("https://www.codewars.com/users/PatrykO92")
           }
-          style={{ height: "3rem", padding: 0, border: 0, margin: "1.5rem" }}
         >
           <img
             src={codewarsLogo}
@@ -72,7 +71,6 @@ const PortfolioPage = () => {
           onClick={() =>
             buttonHandler("https://www.frontendmentor.io/profile/PatrykO92")
           }
-          style={{ height: "3rem", padding: 0, border: 0, margin: "1.5rem" }}
         >
           <img
             src={frontendMentor}
