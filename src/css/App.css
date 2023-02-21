@@ -9,6 +9,7 @@
   --background-color2: rgba(0, 0, 0, 90%);
   --background-color3: rgba(0, 0, 0, 80%);
   --background-color4: rgba(0, 0, 0, 30%);
+  --background-color5: rgba(0, 0, 0, 60%);
   --shadow-color: rgba(0, 0, 0, 90%);
 }
 
@@ -48,7 +49,6 @@ html {
   border: 2px solid var(--main-color2);
   border-radius: 10px;
   border-bottom: 0;
-  overflow: hidden;
 }
 
 button {
@@ -66,18 +66,44 @@ button:hover {
   box-shadow: 0 0 10px 1px var(--main-color1);
 }
 
-nav {
+header {
   position: sticky;
   top: 1rem;
+  width: 100%;
+  display: flex;
+}
+
+nav {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   font-size: 1.7rem;
 }
 
+.main-menu {
+  transition: all 1s;
+}
+
+.hamburger {
+  display: none;
+  border: 0;
+
+  margin-right: 2rem;
+  padding: 0.2rem;
+  border-radius: 0;
+  background-color: transparent;
+  height: 3rem;
+}
+
+.hamburger:hover {
+  background-color: transparent;
+  box-shadow: none;
+  border: 0;
+}
+
 .navleft {
-  z-index: 5;
-  min-width: 200px;
+  z-index: 14;
+  min-width: 250px;
   height: 3rem;
   display: flex;
   align-items: center;
@@ -89,17 +115,18 @@ nav {
 
 .navleft-logo {
   max-height: 3rem;
-  padding-left: 2rem;
+
+  margin-left: 2rem;
 }
 
 .navright {
-  z-index: 5;
+  z-index: 14;
   height: 3rem;
-  min-width: 200px;
+  min-width: 170px;
   background-color: var(--main-color2);
   display: flex;
   justify-content: flex-end;
-  gap: minmax(0.2rem, 1rem);
+  gap: 0.5rem;
   border-radius: 10px 0 0 10px;
   padding: 0 0.5rem 0 0.5rem;
 }
@@ -235,6 +262,7 @@ a {
   right: 0;
   z-index: -1;
   max-width: 105%;
+  max-height: 102%;
 }
 
 #portfolio {
@@ -400,36 +428,58 @@ footer p {
 
 @media screen and (max-width: 600px) {
   .container {
+    grid-template-rows: 3rem auto 2rem;
     border: 0;
     box-shadow: none;
   }
 
-  nav {
-    margin: 0;
+  header {
+    margin-top: 0;
+    top: 0;
+    flex-direction: column;
   }
 
-  .navleft-logo {
-    display: none;
+  .hamburger-menu {
+    background-color: var(--background-color1);
+    z-index: 15;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
   }
+
+  .hamburger {
+    display: block;
+  }
+
+  .main-menu {
+    flex-wrap: wrap-reverse;
+    margin: 0;
+    transform: translateY(-35vh);
+  }
+
+  .show {
+    transform: translateY(0);
+  }
+
   .navleft {
-    flex: 1;
+    flex: 1.2;
     gap: 0;
     justify-content: space-evenly;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     border: 0;
     margin: 0;
     padding: 0;
-    border-radius: 0px 5px 5px 0px;
-    margin-right: 5px;
-    background-color: var(--background-color1);
+    background-color: var(--background-color5);
   }
   .navright {
     justify-content: space-evenly;
-    flex: 1.2;
+    flex: 1;
     border: 0;
     margin: 0;
     padding: 0;
-    border-radius: 5px 0 0 5px;
+    background-color: var(--background-color5);
   }
 
   #contact form {
@@ -444,22 +494,6 @@ footer p {
 @media screen and (max-width: 410px) {
   footer p {
     font-size: 0.5rem;
-  }
-  .active {
-    color: var(--main-color1);
-    text-shadow: 0 0 2px var(--main-color4);
-  }
-
-  .navleft {
-    background-color: var(--main-color2);
-    border-radius: 5px 5px 0px 0px;
-  }
-  .navright {
-    border-radius: 0 0 5px 5px;
-  }
-  .navleft,
-  .navright {
-    margin: -1px 5px 0 5px;
   }
 
   .description-container {

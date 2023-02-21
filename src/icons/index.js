@@ -6,8 +6,10 @@ import htmlLogo from "./html5.svg";
 import jsLogo from "./js.svg";
 import cssLogo from "./css3.svg";
 import reactLogo from "./react.svg";
+import hamburgerButton from "./bars-solid.svg";
 
 export {
+  hamburgerButton,
   gitHubLogo,
   linkedInLogo,
   resumeLogo,

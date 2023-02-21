@@ -1,5 +1,5 @@
 import portfolioPlaceholder from "../images/portfolio-projects/1/placeholder-image-high.png";
-import { gitHubLogo } from "../icons/index";
+import { gitHubLogo, codewarsLogo } from "../icons/index";
 
 const PortfolioPage = () => {
   const buttonHandler = (url) => {
@@ -51,6 +51,14 @@ const PortfolioPage = () => {
             style={{ height: "100%", padding: 0, border: 0 }}
           />
         </button>
+        <a
+          href="https://www.codewars.com/users/PatrykO92"
+          target="_blank"
+          rel="noreferrer"
+          title="Codewars"
+        >
+          <img className="nav-icon" src={codewarsLogo} alt="CodeWars" />
+        </a>
       </div>
     </div>
   );
