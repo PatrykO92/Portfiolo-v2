@@ -47,8 +47,8 @@ html {
   grid-template-rows: 6rem auto 2rem;
   box-shadow: 0 0 15rem 15rem var(--shadow-color);
   border: 2px solid var(--main-color2);
-  border-radius: 10px;
-  border-bottom: 0;
+  border-radius: 0 0 11px 11px;
+  border-top: 0;
 }
 
 button {
@@ -324,16 +324,35 @@ a {
   min-width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6rem;
 }
 
-#contact h2 {
-  text-align: center;
-  font-size: 3rem;
+#contact h1 {
+  font-size: 2rem;
+}
+
+#contact div {
+  width: 50%;
+  font-size: 1.4rem;
+}
+
+#contact .title {
+  font-size: 2.6rem;
+  color: var(--main-color2);
+  font-family: neon;
+}
+
+#contact .message {
+  font-size: 1.5rem;
+}
+
+#contact p {
+  color: var(--main-color1);
 }
 
 #contact form {
-  margin-left: auto;
-  margin-right: auto;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -344,6 +363,7 @@ a {
   border-radius: 10px;
   background-color: var(--background-color1);
   box-shadow: 0 0 1.5rem var(--main-color1);
+  margin-bottom: 3rem;
 }
 
 #contact input,
@@ -406,6 +426,14 @@ footer p {
 }
 
 @media screen and (max-width: 768px) {
+  #contact div {
+    width: 78%;
+  }
+
+  #contact form {
+    width: 75%;
+  }
+
   .description-container {
     width: 100%;
   }
@@ -485,10 +513,6 @@ footer p {
     margin: 0;
     padding: 0;
     background-color: var(--background-color5);
-  }
-
-  #contact form {
-    width: 75%;
   }
 
   footer p {
