@@ -81,7 +81,7 @@ nav {
 }
 
 .main-menu {
-  transition: all 1s;
+  transition: all 0.5s linear;
 }
 
 .hamburger {
@@ -268,7 +268,6 @@ a {
 #portfolio {
   min-width: 100%;
   min-height: 100%;
-  transition: transform 2s;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -323,7 +322,6 @@ a {
 #contact {
   min-height: 100%;
   min-width: 100%;
-  transition: transform 2s;
   display: flex;
   align-items: center;
 }
@@ -372,6 +370,7 @@ footer {
   justify-content: space-between;
   height: 2rem;
   background-color: var(--main-color2);
+  border-radius: 0 0 9px 9px;
 }
 
 footer div {
@@ -391,6 +390,12 @@ footer p {
   height: 70%;
   filter: invert(96%) sepia(97%) saturate(12%) hue-rotate(237deg)
     brightness(103%) contrast(103%);
+}
+
+@media screen and (min-width: 1410px) and (min-height: 1000px) {
+  .container {
+    min-height: 1000px;
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -456,7 +461,7 @@ footer p {
   .main-menu {
     flex-wrap: wrap-reverse;
     margin: 0;
-    transform: translateY(-35vh);
+    transform: translateY(-100%);
   }
 
   .show {

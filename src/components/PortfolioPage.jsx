@@ -1,5 +1,5 @@
 import portfolioPlaceholder from "../images/portfolio-projects/1/placeholder-image-high.png";
-import { gitHubLogo, codewarsLogo } from "../icons/index";
+import { gitHubLogo, codewarsLogo, frontendMentor } from "../icons/index";
 
 const PortfolioPage = () => {
   const buttonHandler = (url) => {
@@ -46,19 +46,45 @@ const PortfolioPage = () => {
         >
           <img
             src={gitHubLogo}
-            alt="github-link"
+            alt="github link"
             className="nav-icon"
             style={{ height: "100%", padding: 0, border: 0 }}
           />
         </button>
-        <a
-          href="https://www.codewars.com/users/PatrykO92"
-          target="_blank"
-          rel="noreferrer"
-          title="Codewars"
+      </div>
+
+      <div className="portfolio-div-full">
+        <p>You can also checkout my codewars and frontendmentor profiles</p>
+        <button
+          onClick={() =>
+            buttonHandler("https://www.codewars.com/users/PatrykO92")
+          }
+          style={{ height: "3rem", padding: 0, border: 0, margin: "1.5rem" }}
         >
-          <img className="nav-icon" src={codewarsLogo} alt="CodeWars" />
-        </a>
+          <img
+            src={codewarsLogo}
+            alt="codewars link"
+            className="nav-icon"
+            style={{ height: "100%", padding: 0, border: 0 }}
+          />
+        </button>
+        <button
+          onClick={() =>
+            buttonHandler("https://www.frontendmentor.io/profile/PatrykO92")
+          }
+          style={{ height: "3rem", padding: 0, border: 0, margin: "1.5rem" }}
+        >
+          <img
+            src={frontendMentor}
+            alt="frontend mentor link"
+            className="nav-icon"
+            style={{
+              height: "100%",
+              padding: "0 0.34rem 0 0.34rem",
+              border: 0,
+            }}
+          />
+        </button>
       </div>
     </div>
   );

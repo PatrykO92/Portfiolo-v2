@@ -7,6 +7,7 @@ import jsLogo from "./js.svg";
 import cssLogo from "./css3.svg";
 import reactLogo from "./react.svg";
 import hamburgerButton from "./bars-solid.svg";
+import frontendMentor from "./frontendmentor.svg";
 
 export {
   hamburgerButton,
@@ -18,4 +19,5 @@ export {
   jsLogo,
   cssLogo,
   reactLogo,
+  frontendMentor,
 };
