@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState } from "react";
 
 import {
   AboutPage,
@@ -11,20 +11,24 @@ import {
 import "./css/app.css";
 
 function App() {
+  const [isVisible, setIsVisible] = useState([true, true, true]);
+
   return (
-    <div>
+    <div id="home">
       <BackgroundComponent />
       <div className="container">
-        <BrowserRouter>
-          <Navbar />
-          <div>
-            <Routes>
-              <Route path="" element={<AboutPage />} />
-              <Route path="portfolio" element={<PortfolioPage />} />
-              <Route path="contact" element={<ContactPage />} />
-            </Routes>
+        <Navbar />
+        <div>
+          <div className={isVisible[0] ? "section show" : "section"}>
+            <AboutPage />
           </div>
-        </BrowserRouter>
+          <div className={isVisible[1] ? "section show" : "section"}>
+            <PortfolioPage />
+          </div>
+          <div className={isVisible[2] ? "section show" : "section"}>
+            <ContactPage />
+          </div>
+        </div>
         <Footer />
       </div>
     </div>

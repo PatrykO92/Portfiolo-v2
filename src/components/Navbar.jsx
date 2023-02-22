@@ -7,10 +7,8 @@ import {
 } from "../icons";
 import logo from "../images/logo.png";
 
-import { NavLink } from "react-router-dom";
-
 const Navbar = () => {
-  window.addEventListener("resize", (event) => {
+  window.addEventListener("resize", () => {
     document.querySelector(".main-menu").classList.remove("show");
   });
 
@@ -39,27 +37,27 @@ const Navbar = () => {
             document.querySelector(".main-menu").classList.remove("show");
           }}
         >
-          <NavLink
-            to="/"
+          <a
+            href="#home"
             className={activePage === "about" ? "active" : ""}
             onClick={() => setActivePage("about")}
           >
             Home
-          </NavLink>
-          <NavLink
-            to="/portfolio"
+          </a>
+          <a
+            href="#portfolio"
             className={activePage === "portfolio" ? "active" : ""}
             onClick={() => setActivePage("portfolio")}
           >
             Portfolio
-          </NavLink>
-          <NavLink
-            to="/contact"
+          </a>
+          <a
+            href="#contact"
             className={activePage === "contact" ? "active" : ""}
             onClick={() => setActivePage("contact")}
           >
             Contact
-          </NavLink>
+          </a>
         </div>
 
         <div className="navright">

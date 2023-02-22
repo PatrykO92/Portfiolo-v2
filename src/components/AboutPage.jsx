@@ -6,7 +6,7 @@ const AboutPage = () => {
   };
 
   return (
-    <main id="about" key="about" className="">
+    <main id="about" key="about">
       <div className="about">
         <div className="description-container">
           <h1>Patryk Orlowski</h1>

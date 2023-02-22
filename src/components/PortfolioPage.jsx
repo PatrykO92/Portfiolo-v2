@@ -1,6 +1,8 @@
 import portfolioPlaceholder from "../images/portfolio-projects/1/placeholder-image-high.png";
 import { gitHubLogo, codewarsLogo, frontendMentor } from "../icons/index";
 
+import { useEffect } from "react";
+
 const PortfolioPage = () => {
   const buttonHandler = (url) => {
     window.open(url, "_blank");
