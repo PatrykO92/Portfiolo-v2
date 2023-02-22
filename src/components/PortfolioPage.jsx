@@ -10,6 +10,9 @@ const PortfolioPage = () => {
 
   return (
     <div id="portfolio">
+      <div className="portfolio-div-full">
+        <h2>Portfolio</h2>
+      </div>
       <div className="portfolio-div">
         <img src={portfolioPlaceholder} alt="portfolio" />
         <span>Project name</span>

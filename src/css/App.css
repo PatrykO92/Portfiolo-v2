@@ -52,8 +52,8 @@ html {
 }
 
 .section {
-  transform: translateX(100px);
-  transition: all 1s;
+  border-bottom: 1px solid red;
+  transition: all 2s;
   opacity: 0;
 }
 
@@ -97,9 +97,9 @@ nav {
 }
 
 .hamburger {
+  z-index: 16;
   display: none;
   border: 0;
-
   margin-right: 2rem;
   padding: 0.2rem;
   border-radius: 0;
@@ -149,10 +149,6 @@ a {
 
 .navleft a {
   transition: color 0.5s, opacity 4s;
-}
-
-.active {
-  color: var(--main-color2);
 }
 
 .navleft a:hover {
@@ -224,6 +220,7 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: center;
 }
 
 .description-container {
@@ -231,7 +228,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: flex-start;
+
   padding: 2rem;
 }
 
@@ -290,6 +287,12 @@ a {
   font-size: 1.5rem;
 }
 
+.portfolio-div-full h2 {
+  font-family: neon;
+  font-size: 2.5rem;
+  color: var(--main-color2);
+}
+
 .portfolio-div-full > button {
   height: 3rem;
   padding: 0;
@@ -335,6 +338,7 @@ a {
 }
 
 #contact {
+  text-align: center;
   min-height: calc(100vh - 3rem);
   width: 100%;
   display: flex;
@@ -428,6 +432,21 @@ footer p {
     brightness(103%) contrast(103%);
 }
 
+@media screen and (min-width: 1400px) and (min-height: 1200px) {
+  .about {
+    min-height: 500px;
+  }
+
+  #portfolio {
+    width: 100%;
+    min-height: 500px;
+  }
+
+  #contact {
+    min-height: 500px;
+  }
+}
+
 @media screen and (max-width: 1400px) {
   .container {
     border: 0;
@@ -472,6 +491,10 @@ footer p {
     box-shadow: none;
   }
 
+  .active {
+    color: var(--main-color2);
+  }
+
   header {
     margin-top: 0;
     top: 0;
@@ -498,6 +521,10 @@ footer p {
     transform: translateY(-100%);
   }
 
+  .show-nav {
+    transform: translateY(0);
+  }
+
   .navleft {
     flex: 1.2;
     gap: 0;
@@ -514,6 +541,7 @@ footer p {
     border: 0;
     margin: 0;
     padding: 0;
+    border-radius: 0;
     background-color: var(--background-color5);
   }
 
@@ -528,7 +556,6 @@ footer p {
   }
 
   .description-container {
-    background-color: var(--background-color3);
     padding: 1rem;
     height: 100%;
     justify-content: center;

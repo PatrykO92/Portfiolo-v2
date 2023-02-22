@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   gitHubLogo,
   linkedInLogo,
@@ -7,24 +7,41 @@ import {
 } from "../icons";
 import logo from "../images/logo.png";
 
-const Navbar = () => {
+const Navbar = ({ isVisible }) => {
   window.addEventListener("resize", () => {
-    document.querySelector(".main-menu").classList.remove("show");
+    document.querySelector(".main-menu").classList.remove("show-nav");
+  });
+
+  window.addEventListener("scroll", () => {
+    document.querySelector(".main-menu").classList.remove("show-nav");
   });
 
   const [activePage, setActivePage] = useState("");
 
+  useEffect(() => {
+    isVisible["0"] && setActivePage("home");
+    isVisible["1"] && setActivePage("portfolio");
+    isVisible["2"] && setActivePage("contact");
+  }, [isVisible]);
+
   return (
     <header>
       <div className="hamburger-menu">
-        <img src={logo} alt="" className="navleft-logo" />
+        <a
+          href="/"
+          className={activePage === "home" ? "active" : ""}
+          onClick={() => setActivePage("home")}
+        >
+          <img src={logo} alt="" className="navleft-logo" />
+        </a>
+
         <button className="hamburger">
           <img
             className="nav-icon"
             src={hamburgerButton}
             alt="Menu"
             onClick={() => {
-              document.querySelector(".main-menu").classList.toggle("show");
+              document.querySelector(".main-menu").classList.toggle("show-nav");
             }}
           />
         </button>
@@ -34,13 +51,13 @@ const Navbar = () => {
         <div
           className="navleft"
           onClick={() => {
-            document.querySelector(".main-menu").classList.remove("show");
+            document.querySelector(".main-menu").classList.remove("show-nav");
           }}
         >
           <a
             href="#home"
-            className={activePage === "about" ? "active" : ""}
-            onClick={() => setActivePage("about")}
+            className={activePage === "home" ? "active" : ""}
+            onClick={() => setActivePage("home")}
           >
             Home
           </a>
