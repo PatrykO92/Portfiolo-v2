@@ -65,6 +65,7 @@ html {
 button {
   background-color: var(--main-color2);
   border: 1px solid var(--main-color3);
+  width: 7rem;
   color: var(--main-font-color);
   border-radius: 10px;
   font-size: 1.5rem;
@@ -307,11 +308,11 @@ a {
   border-radius: 10px;
   background-color: var(--background-color1);
   padding: 1rem;
-  box-shadow: 0 0 1.2rem var(--main-color1);
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  animation: shadow-box-pulse 6s linear infinite;
 }
 
 .portfolio-div span {
@@ -382,8 +383,9 @@ a {
   border: 1px solid var(--main-color2);
   border-radius: 10px;
   background-color: var(--background-color1);
-  box-shadow: 0 0 1.5rem var(--main-color1);
   margin-bottom: 3rem;
+
+  animation: shadow-box-pulse 6s linear infinite;
 }
 
 #contact input,
@@ -563,5 +565,23 @@ footer p {
 
   #contact form {
     width: 85%;
+  }
+}
+
+@keyframes shadow-box-pulse {
+  0% {
+    box-shadow: 0 0 1.5rem var(--main-color1);
+  }
+  25% {
+    box-shadow: 0 0 1.5rem var(--main-color2);
+  }
+  50% {
+    box-shadow: 0 0 1.5rem var(--main-color1);
+  }
+  75% {
+    box-shadow: 0 0 1.5rem var(--main-color2);
+  }
+  100% {
+    box-shadow: 0 0 1.5rem var(--main-color1);
   }
 }

@@ -16,7 +16,7 @@ function App() {
   onLoad();
 
   const mainContainer = useRef(null);
-  const [isVisible, setIsVisible] = useState({ 0: true, 1: true, 2: true });
+  const [isVisible, setIsVisible] = useState({ 0: true, 1: false, 2: false });
 
   useEffect(() => {
     const observer = new IntersectionObserver(

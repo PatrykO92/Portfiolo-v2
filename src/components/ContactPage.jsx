@@ -10,10 +10,7 @@ const ContactPage = () => {
           </span>
           <br />
           Whether you have a question, a comment, or just want to say hello, I
-          am always happy to connect.
-          <br />
-          Thank you for visiting my portfolio.
-          <br />
+          am always happy to connect. Thank you for visiting my portfolio.
         </p>
       </div>
       <form action="https://formspree.io/f/xaykzgna" method="POST">

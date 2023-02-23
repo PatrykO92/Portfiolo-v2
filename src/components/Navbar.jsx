@@ -16,7 +16,7 @@ const Navbar = ({ isVisible }) => {
     document.querySelector(".main-menu").classList.remove("show-nav");
   });
 
-  const [activePage, setActivePage] = useState("");
+  const [activePage, setActivePage] = useState("home");
 
   useEffect(() => {
     isVisible["0"] && setActivePage("home");
