@@ -32,7 +32,7 @@ function App() {
     for (let item of childrens) {
       observer.observe(item);
     }
-  }, []);
+  }, [isVisible]);
 
   return (
     <div id="home">
