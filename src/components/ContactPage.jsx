@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 const ContactPage = () => {
+  const [showMessage, setShowMessage] = useState({ status: false, msg: "" });
+
   const [formValue, setFormValue] = useState({
     name: "",
     email: "",
@@ -22,14 +24,36 @@ const ContactPage = () => {
     }));
 
   const handleSubmit = (e) => {
-    console.log(formValue);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...formValue }),
     })
-      .then(() => alert("Success!"))
-      .catch((error) => alert(error));
+      .then((e) => {
+        if (e.ok) {
+          setShowMessage({ status: true, msg: "Message sent successfuly!" });
+          setFormValue({
+            name: "",
+            email: "",
+            message: "",
+          });
+          setTimeout(() => {
+            setShowMessage({ status: false });
+          }, 2000);
+        } else {
+          setShowMessage({
+            status: true,
+            msg: "Please try again later! Or use Linkedin to contact!",
+          });
+          setTimeout(() => {
+            setShowMessage({ status: false });
+          }, 3500);
+          throw new Error(e);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     e.preventDefault();
   };
@@ -56,30 +80,41 @@ const ContactPage = () => {
         data-netlify="true"
         name="contact"
       >
-        <input type="hidden" name="form-name" value="contact" />
-        <h1>Reach out</h1>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-          placeholder="Email..."
-        />
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleChange}
-          placeholder="Name..."
-        />
-        <textarea
-          onChange={handleChange}
-          value={message}
-          rows="5"
-          name="message"
-          placeholder="Please, enter Your message here..."
-        ></textarea>
-        <button type="submit">Send</button>
+        {showMessage.status ? (
+          <div className="message-approved">
+            <span>{showMessage.msg}</span>
+          </div>
+        ) : (
+          <>
+            <input type="hidden" name="form-name" value="contact" />
+            <h1>Reach out</h1>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleChange}
+              placeholder="Email..."
+              required
+            />
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleChange}
+              placeholder="Name..."
+            />
+            <textarea
+              required
+              onChange={handleChange}
+              value={message}
+              rows="5"
+              name="message"
+              placeholder="Please, enter Your message here..."
+            ></textarea>
+
+            <button type="submit">Send</button>
+          </>
+        )}
       </form>
     </div>
   );
