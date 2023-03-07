@@ -1,7 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 
-import onLoad from "./utils/onLoad.js";
-
 import {
   AboutPage,
   BackgroundComponent,
@@ -13,10 +11,12 @@ import {
 import "./css/app.css";
 
 function App() {
-  onLoad();
-
   const mainContainer = useRef(null);
   const [isVisible, setIsVisible] = useState({ 0: true, 1: false, 2: false });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
