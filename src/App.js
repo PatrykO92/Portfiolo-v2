@@ -16,14 +16,13 @@ function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const changed = entries[0].target.id;
-        isVisible[`${changed}`] = entries[0].isIntersecting;
-        setIsVisible((oldVal) => ({ ...oldVal, ...isVisible }));
+        setIsVisible((oldVal) => ({
+          ...oldVal,
+          [changed]: entries[0].isIntersecting,
+        }));
       },
       { root: null, rootMargin: "0px", threshold: 0.1 }
     );
@@ -32,7 +31,11 @@ function App() {
     for (let item of childrens) {
       observer.observe(item);
     }
-  }, [isVisible]);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div id="home">

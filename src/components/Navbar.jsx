@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import {
   gitHubLogo,
   linkedInLogo,
@@ -7,7 +6,7 @@ import {
 } from "../icons";
 import logo from "../images/logo.png";
 
-const Navbar = ({ isVisible }) => {
+const Navbar = () => {
   window.addEventListener("resize", () => {
     document.querySelector(".main-menu").classList.remove("show-nav");
   });
@@ -16,22 +15,10 @@ const Navbar = ({ isVisible }) => {
     document.querySelector(".main-menu").classList.remove("show-nav");
   });
 
-  const [activePage, setActivePage] = useState("home");
-
-  useEffect(() => {
-    isVisible["0"] && setActivePage("home");
-    isVisible["1"] && setActivePage("portfolio");
-    isVisible["2"] && setActivePage("contact");
-  }, [isVisible]);
-
   return (
     <header>
       <div className="hamburger-menu">
-        <a
-          href="/"
-          className={activePage === "home" ? "active" : ""}
-          onClick={() => setActivePage("home")}
-        >
+        <a href="/">
           <img src={logo} alt="" className="navleft-logo" />
         </a>
 
@@ -54,27 +41,9 @@ const Navbar = ({ isVisible }) => {
             document.querySelector(".main-menu").classList.remove("show-nav");
           }}
         >
-          <a
-            href="#home"
-            className={activePage === "home" ? "active" : ""}
-            onClick={() => setActivePage("home")}
-          >
-            Home
-          </a>
-          <a
-            href="#portfolio"
-            className={activePage === "portfolio" ? "active" : ""}
-            onClick={() => setActivePage("portfolio")}
-          >
-            Portfolio
-          </a>
-          <a
-            href="#contact"
-            className={activePage === "contact" ? "active" : ""}
-            onClick={() => setActivePage("contact")}
-          >
-            Contact
-          </a>
+          <a href="#home">Home</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
         </div>
 
         <div className="navright">
@@ -92,7 +61,7 @@ const Navbar = ({ isVisible }) => {
           >
             <img className="nav-icon" src={gitHubLogo} alt="GitHub" />
           </a>
-          <a href="src/files/cv.pdf" target="_blank" rel="noreferrer">
+          <a href="../files/cv.pdf" target="_blank" rel="noreferrer">
             <img className="nav-icon" src={resumeLogo} alt="Resume" />
           </a>
         </div>
