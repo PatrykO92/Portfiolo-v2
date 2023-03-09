@@ -83,6 +83,7 @@ header {
   top: 1rem;
   width: 100%;
   display: flex;
+  align-items: center;
 }
 
 nav {
@@ -100,11 +101,10 @@ nav {
   z-index: 16;
   display: none;
   border: 0;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
   padding: 0.2rem;
   border-radius: 0;
   background-color: transparent;
-  height: 3rem;
 }
 
 .hamburger:hover {
@@ -147,6 +147,7 @@ a {
 }
 
 .navleft a {
+  text-shadow: 2px 2px 5px var(--main-color2);
   transition: color 0.5s, opacity 4s;
 }
 
@@ -214,20 +215,20 @@ a {
 }
 
 .about {
-  min-height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+  padding-top: 3rem;
 }
 
 .description-container {
   width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: left;
-
+  align-items: flex-start;
+  justify-content: center;
   padding: 2rem;
 }
 
@@ -239,11 +240,11 @@ a {
 
 .description-container h1 {
   color: var(--main-color2);
-  font-size: 3.5rem;
+  font-size: 3.2rem;
 }
 
 .description-container h2 {
-  font-size: 2rem;
+  font-size: 2.1rem;
   margin-bottom: 3rem;
 }
 
@@ -251,21 +252,83 @@ a {
   font-size: 1.4rem;
   color: var(--main-color1);
   text-align: justify;
-  margin-bottom: 3rem;
-}
-
-.description-container button {
-  width: 100px;
 }
 
 .photo-container {
-  width: 50%;
+  max-width: 50%;
 }
 
 .my-photo {
   z-index: -1;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 800px;
+}
+
+.more-button {
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: transparent;
+  margin: 1rem 0;
+}
+
+.more-button:hover {
+  background-color: transparent;
+  border: transparent;
+  box-shadow: none;
+  color: var(--main-color2);
+}
+
+.more {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid var(--main-font-color);
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-200vh);
+  transition: all 1s ease-in-out;
+}
+
+.more.show {
+  transform: translateY(0);
+  opacity: 1;
+  max-height: 1000px;
+  transition: all 1s ease-in-out;
+}
+
+.more span {
+  margin-top: 1rem;
+  color: var(--main-color1);
+  font-size: 1.5rem;
+}
+
+.more p {
+  font-size: 1rem;
+  color: var(--main-font-color);
+}
+
+.more code {
+  font-family: monospace;
+  margin: 1rem 5rem;
+  padding: 0.2rem 0.5rem;
+  display: block;
+  background-color: black;
+  color: green;
+  border: 1px solid white;
+}
+
+.more a {
+  text-decoration: underline;
+  transition: all 1s;
+}
+.more a:hover {
+  color: var(--main-color1);
+}
+
+.wave-animation {
+  font-size: 2rem;
+  display: inline-block;
+  animation: hello-wave 1s linear infinite;
 }
 
 #portfolio {
@@ -345,10 +408,6 @@ a {
   flex-direction: column;
   gap: 4rem;
   padding-top: 5rem;
-}
-
-#contact h1 {
-  font-size: 2rem;
 }
 
 #contact div {
@@ -437,12 +496,12 @@ footer p {
 
 @media screen and (min-width: 1400px) and (min-height: 1200px) {
   .about {
-    min-height: 500px;
+    min-height: 1100px;
   }
 
   #portfolio {
     width: 100%;
-    min-height: 500px;
+    min-height: 1100px;
   }
 
   #contact {
@@ -493,10 +552,6 @@ footer p {
     box-shadow: none;
   }
 
-  .active {
-    color: var(--main-color2);
-  }
-
   header {
     margin-top: 0;
     top: 0;
@@ -510,11 +565,20 @@ footer p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-content: flex-start;
+    align-items: center;
   }
 
   .hamburger {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+  }
+
+  .hamburger > img {
+    height: 2rem;
+    filter: invert(96%) sepia(97%) saturate(12%) hue-rotate(237deg)
+      brightness(103%) contrast(103%);
   }
 
   .main-menu {
@@ -537,6 +601,12 @@ footer p {
     padding: 0;
     background-color: var(--background-color5);
   }
+
+  .navleft-logo {
+    height: 2.5rem;
+    margin-left: 1.5rem;
+  }
+
   .navright {
     justify-content: space-evenly;
     flex: 1;
@@ -547,8 +617,10 @@ footer p {
     background-color: var(--background-color5);
   }
 
-  footer p {
-    font-size: 0.7rem;
+  .about {
+    align-content: flex-start;
+    padding-top: 0;
+    margin-top: -3rem;
   }
 }
 
@@ -583,5 +655,19 @@ footer p {
   }
   100% {
     box-shadow: 0 0 1.5rem var(--main-color1);
+  }
+}
+
+@keyframes hello-wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  34% {
+    transform: rotate(-20deg);
+  }
+
+  68% {
+    transform: rotate(20deg);
   }
 }

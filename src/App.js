@@ -12,7 +12,7 @@ import "./css/app.css";
 
 function App() {
   const mainContainer = useRef(null);
-  const [isVisible, setIsVisible] = useState({ 0: true, 1: false, 2: false });
+  const [isVisible, setIsVisible] = useState({ 0: true, 1: true, 2: true });
 
   useEffect(() => {
     window.scrollTo(0, 0);

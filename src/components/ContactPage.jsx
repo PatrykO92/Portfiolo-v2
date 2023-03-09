@@ -31,7 +31,7 @@ const ContactPage = () => {
     })
       .then((e) => {
         if (e.ok) {
-          setShowMessage({ status: true, msg: "Message sent successfuly!" });
+          setShowMessage({ status: true, msg: "Message sent successfully!" });
           setFormValue({
             name: "",
             email: "",
@@ -43,7 +43,7 @@ const ContactPage = () => {
         } else {
           setShowMessage({
             status: true,
-            msg: "Please try again later! Or use Linkedin to contact!",
+            msg: "Please try again later. Or use Linkedin to contact me.",
           });
           setTimeout(() => {
             setShowMessage({ status: false });
@@ -63,11 +63,11 @@ const ContactPage = () => {
   return (
     <div id="contact">
       <div>
-        <span className="title">Hello there!</span>
+        <span className="title">Still here?!</span>
         <br />
         <p>
           <span className="message">
-            I appreciate your interest in my work.{" "}
+            I appreciate your interest in my work.
           </span>
           <br />
           Whether you have a question, a comment, or just want to say hello, I
@@ -87,7 +87,7 @@ const ContactPage = () => {
         ) : (
           <>
             <input type="hidden" name="form-name" value="contact" />
-            <h1>Reach out</h1>
+            <div>Reach out!</div>
             <input
               type="email"
               name="email"

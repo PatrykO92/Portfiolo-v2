@@ -6,6 +6,8 @@ import {
 } from "../icons";
 import logo from "../images/logo.png";
 
+import cv from "../files/cv.pdf";
+
 const Navbar = () => {
   window.addEventListener("resize", () => {
     document.querySelector(".main-menu").classList.remove("show-nav");
@@ -24,7 +26,6 @@ const Navbar = () => {
 
         <button className="hamburger">
           <img
-            className="nav-icon"
             src={hamburgerButton}
             alt="Menu"
             onClick={() => {
@@ -61,7 +62,7 @@ const Navbar = () => {
           >
             <img className="nav-icon" src={gitHubLogo} alt="GitHub" />
           </a>
-          <a href="../files/cv.pdf" target="_blank" rel="noreferrer">
+          <a href={cv} target="_blank" rel="noreferrer">
             <img className="nav-icon" src={resumeLogo} alt="Resume" />
           </a>
         </div>

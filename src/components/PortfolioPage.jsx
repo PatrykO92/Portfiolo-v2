@@ -40,7 +40,7 @@ const PortfolioPage = () => {
 
       <div className="portfolio-div-full">
         <p>
-          Those are my two largest projects. Check out of my GitHub for smaller
+          Those are my two favorite projects. Check out my GitHub for other
           ones.
         </p>
         <button
@@ -57,7 +57,7 @@ const PortfolioPage = () => {
       </div>
 
       <div className="portfolio-div-full">
-        <p>You can also checkout my codewars and frontendmentor profiles</p>
+        <p>You can also look at my Code Wars and Frontend Mentor profiles.</p>
         <button
           onClick={() =>
             buttonHandler("https://www.codewars.com/users/PatrykO92")
