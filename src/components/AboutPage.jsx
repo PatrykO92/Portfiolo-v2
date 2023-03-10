@@ -12,7 +12,7 @@ const AboutPage = () => {
           <h2>Front-end web developer</h2>
 
           <p>
-            Hey there <span className="wave-animation">✋</span>
+            Hey there <span className="wave-animation">😉</span>
             <br /> I'm Patryk! I'm a front-end web developer who loves working
             with JavaScript and React. I'm always hungry for more knowledge and
             eager to level up my skills to become an expert in the field. I'm
@@ -47,10 +47,8 @@ const AboutPage = () => {
                 <br />
                 <br />
                 begin <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;writeln('Hello, world.');
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;readln;
-                <br />
+                <span>writeln('Hello, world.');</span>
+                <span>readln;</span>
                 end.
                 <br />
               </code>
