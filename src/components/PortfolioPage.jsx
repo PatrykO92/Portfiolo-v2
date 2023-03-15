@@ -44,7 +44,7 @@ const PortfolioPage = () => {
           ones.
         </p>
         <button
-          onClick={() => buttonHandler("https://github.com")}
+          onClick={() => buttonHandler("https://github.com/PatrykO92")}
           style={{ height: "5rem" }}
         >
           <img

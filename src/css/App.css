@@ -145,7 +145,7 @@ a {
 }
 
 .navleft a {
-  text-shadow: 2px 2px 5px var(--main-color2);
+  text-shadow: 3px 3px var(--background-color3);
   transition: color 0.5s, opacity 4s;
 }
 
@@ -276,7 +276,6 @@ a {
 }
 
 .more {
-  z-index: -1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
