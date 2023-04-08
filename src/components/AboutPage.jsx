@@ -1,4 +1,3 @@
-import myPhoto from "../images/myPhoto.png";
 import { useState } from "react";
 
 const AboutPage = () => {
