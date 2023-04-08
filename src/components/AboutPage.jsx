@@ -13,17 +13,15 @@ const AboutPage = () => {
 
           <p>
             Hey there <span className="wave-animation">😉</span>
-            <br /> I'm Patryk! I'm a front-end web developer who loves working
-            with JavaScript and React. I'm always hungry for more knowledge and
-            eager to level up my skills to become an expert in the field. I'm
-            constantly on the lookout for new challenges and exciting
-            opportunities to enhance my abilities.
+            <br /> My name is Patryk. I'm a front-end web developer who loves
+            working with ReactJS. I'm always hungry for more knowledge and eager
+            to level up my skills to become an expert in the field.
           </p>
           <button
             className="more-button"
             onClick={() => setShowMore(!showMore)}
           >
-            {!showMore ? "Show more..." : "Hide..."}
+            {!showMore ? "Show more about me" : "Hide"}
           </button>
           <div className={`more ${showMore ? "show" : ""}`}>
             <span>Short about me</span>
@@ -66,10 +64,6 @@ const AboutPage = () => {
               Do you want to know more? <a href="#contact">Contact me!</a>
             </p>
           </div>
-        </div>
-
-        <div className="photo-container">
-          <img src={myPhoto} alt="Patryk Orlowski" className="my-photo" />
         </div>
       </div>
     </main>

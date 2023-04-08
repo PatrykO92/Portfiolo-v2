@@ -9,7 +9,7 @@ const PortfolioPage = () => {
   return (
     <div id="portfolio">
       <div className="portfolio-div-full">
-        <h2>Portfolio</h2>
+        <h2>Projects</h2>
       </div>
       <div className="portfolio-div">
         <img src={portfolioPlaceholder} alt="portfolio" />
@@ -25,7 +25,33 @@ const PortfolioPage = () => {
         </div>
       </div>
       <div className="portfolio-div">
+        <img src={portfolioPlaceholder} alt="portfolio" lazy />
+        <span>Project name</span>
+        <div className="portfolio-buttons">
+          <button onClick={() => buttonHandler("https://github.com")}>
+            GitHub
+          </button>
+          <button onClick={() => buttonHandler("https://github.com")}>
+            Live
+          </button>
+          <button className="project-link">More info</button>
+        </div>
+      </div>
+      <div className="portfolio-div">
         <img src={portfolioPlaceholder} alt="portfolio" />
+        <span>Project name</span>
+        <div className="portfolio-buttons">
+          <button onClick={() => buttonHandler("https://github.com")}>
+            GitHub
+          </button>
+          <button onClick={() => buttonHandler("https://github.com")}>
+            Live
+          </button>
+          <button className="project-link">More info</button>
+        </div>
+      </div>
+      <div className="portfolio-div">
+        <img src={portfolioPlaceholder} alt="portfolio" lazy />
         <span>Project name</span>
         <div className="portfolio-buttons">
           <button onClick={() => buttonHandler("https://github.com")}>
@@ -40,7 +66,7 @@ const PortfolioPage = () => {
 
       <div className="portfolio-div-full">
         <p>
-          Those are my two favorite projects. Check out my GitHub for other
+          Those are my four favorite projects. Check out my GitHub for other
           ones.
         </p>
         <button
