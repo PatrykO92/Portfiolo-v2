@@ -43,13 +43,13 @@ const Navbar = () => {
           }}
         >
           <a href="#home">Home</a>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#portfolio">Projects</a>
           <a href="#contact">Contact</a>
         </div>
 
         <div className="navright">
           <a
-            href="https://www.linkedin.com/in/patryk-or%C5%82owski-348515258/"
+            href="https://www.linkedin.com/in/PatrykO92/"
             target="_blank"
             rel="noreferrer"
           >

@@ -1,4 +1,6 @@
-import portfolioPlaceholder from "../images/portfolio-projects/1/placeholder-image-high.png";
+import osDesktopScreen from "../images/portfolio-projects/1/os-desktop.jpg";
+import eCommerceScreen from "../images/portfolio-projects/2/FM-e-commerce.jpg";
+
 import { gitHubLogo, codewarsLogo, frontendMentor } from "../icons/index";
 
 const PortfolioPage = () => {
@@ -11,62 +13,32 @@ const PortfolioPage = () => {
       <div className="portfolio-div-full">
         <h2>Projects</h2>
       </div>
+
       <div className="portfolio-div">
-        <img src={portfolioPlaceholder} alt="portfolio" />
-        <span>Project name</span>
+        <img src={osDesktopScreen} alt="" />
+        <span>OS PO® Operating System Desktop</span>
         <div className="portfolio-buttons">
-          <button onClick={() => buttonHandler("https://github.com")}>
+          <a href="https://github.com/PatrykO92/OS_desktop_OS-PO-frontend">
             GitHub
-          </button>
-          <button onClick={() => buttonHandler("https://github.com")}>
-            Live
-          </button>
-          <button className="project-link">More info</button>
+          </a>
+          <a href="https://operating-system-po.netlify.app/">Live</a>
         </div>
       </div>
+
       <div className="portfolio-div">
-        <img src={portfolioPlaceholder} alt="portfolio" lazy />
-        <span>Project name</span>
+        <img src={eCommerceScreen} alt="portfolio" />
+        <span>E-commerce Product Page</span>
         <div className="portfolio-buttons">
-          <button onClick={() => buttonHandler("https://github.com")}>
+          <a href="https://github.com/PatrykO92/FrontendMentor_Ecommerce-product-page">
             GitHub
-          </button>
-          <button onClick={() => buttonHandler("https://github.com")}>
-            Live
-          </button>
-          <button className="project-link">More info</button>
-        </div>
-      </div>
-      <div className="portfolio-div">
-        <img src={portfolioPlaceholder} alt="portfolio" />
-        <span>Project name</span>
-        <div className="portfolio-buttons">
-          <button onClick={() => buttonHandler("https://github.com")}>
-            GitHub
-          </button>
-          <button onClick={() => buttonHandler("https://github.com")}>
-            Live
-          </button>
-          <button className="project-link">More info</button>
-        </div>
-      </div>
-      <div className="portfolio-div">
-        <img src={portfolioPlaceholder} alt="portfolio" lazy />
-        <span>Project name</span>
-        <div className="portfolio-buttons">
-          <button onClick={() => buttonHandler("https://github.com")}>
-            GitHub
-          </button>
-          <button onClick={() => buttonHandler("https://github.com")}>
-            Live
-          </button>
-          <button className="project-link">More info</button>
+          </a>
+          <a href="https://e-commerce-challange-fm.netlify.app/">Live</a>
         </div>
       </div>
 
       <div className="portfolio-div-full">
         <p>
-          Those are my four favorite projects. Check out my GitHub for other
+          Those are my two favorite projects. Check out my GitHub for other
           ones.
         </p>
         <button
