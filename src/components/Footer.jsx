@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <div>
-        <p>patrykorlowski.netlify.app © 2023</p>
+        <p>patrykorlowski.netlify.app © 2024</p>
       </div>
       <div>
         <p>Created with: </p>

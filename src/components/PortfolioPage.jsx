@@ -1,5 +1,5 @@
 import osDesktopScreen from "../images/portfolio-projects/1/os-desktop.jpg";
-import eCommerceScreen from "../images/portfolio-projects/2/FM-e-commerce.jpg";
+import operativeHubScreenshot from "../images/portfolio-projects/2/screenshot-operative-hub.jpg";
 
 import { gitHubLogo, codewarsLogo, frontendMentor } from "../icons/index";
 
@@ -15,6 +15,15 @@ const PortfolioPage = () => {
       </div>
 
       <div className="portfolio-div">
+        <img src={operativeHubScreenshot} alt="portfolio" />
+        <span>Operative Hub - ERP</span>
+        <div className="portfolio-buttons">
+          <a href="https://github.com/PatrykO92/operative_hub">GitHub</a>
+          <a href="https://operative-hub-test.vercel.app/">Live</a>
+        </div>
+      </div>
+
+      <div className="portfolio-div">
         <img src={osDesktopScreen} alt="" />
         <span>OS PO® Operating System Desktop</span>
         <div className="portfolio-buttons">
@@ -22,17 +31,6 @@ const PortfolioPage = () => {
             GitHub
           </a>
           <a href="https://operating-system-po.netlify.app/">Live</a>
-        </div>
-      </div>
-
-      <div className="portfolio-div">
-        <img src={eCommerceScreen} alt="portfolio" />
-        <span>E-commerce Product Page</span>
-        <div className="portfolio-buttons">
-          <a href="https://github.com/PatrykO92/FrontendMentor_Ecommerce-product-page">
-            GitHub
-          </a>
-          <a href="https://e-commerce-challange-fm.netlify.app/">Live</a>
         </div>
       </div>
 
